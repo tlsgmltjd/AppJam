@@ -20,5 +20,11 @@ public class UserEntity {
 
     private String userName;
 
+    private Integer point;
+
     private String token;
+
+    public void pointUp() {
+        this.point = this.point + 3;
+    }
 }

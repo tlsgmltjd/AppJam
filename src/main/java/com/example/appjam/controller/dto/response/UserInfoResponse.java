@@ -12,5 +12,6 @@ import lombok.NoArgsConstructor;
 public class UserInfoResponse {
     private Long id;
     private String userName;
+    private Integer point;
     private String token;
 }

@@ -19,6 +19,7 @@ public class UserService {
         if (!userJpaRepository.existsByToken(request.getToken())) {
             UserEntity user = UserEntity.builder()
                     .userName(request.getUserName())
+                    .point(0)
                     .token(request.getToken())
                     .build();
 
@@ -34,7 +35,15 @@ public class UserService {
         return UserInfoResponse.builder()
                 .id(user.getId())
                 .userName(user.getUserName())
+                .point(user.getPoint())
                 .token(user.getToken())
                 .build();
+    }
+
+    @Transactional
+    public void point(String token) {
+        UserEntity user = userJpaRepository.findByToken(token)
+                .orElseThrow(RuntimeException::new);
+        user.pointUp();
     }
 }
