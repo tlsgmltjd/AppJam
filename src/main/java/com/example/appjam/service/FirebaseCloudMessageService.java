@@ -48,7 +48,9 @@ public class FirebaseCloudMessageService {
                                 .body(body)
                                 .image(null)
                                 .build()
-                        ).build()).validateOnly(false).build();
+                        ).build())
+                .validateOnly(false)
+                .build();
 
         return objectMapper.writeValueAsString(fcmMessage);
     }
