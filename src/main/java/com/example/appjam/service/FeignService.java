@@ -45,7 +45,7 @@ public class FeignService {
                 .toList();
 
 
-        return itineraries.stream()
+        List<MapResponse> mapResponses = itineraries.stream()
                 .map(itinerary -> MapResponse.builder()
                         .id(id++)
                         .fee(itinerary.getFare().getRegular().getTotalFare())
@@ -65,5 +65,7 @@ public class FeignService {
                         .build()
                 )
                 .toList();
+
+        return mapResponses;
     }
 }
