@@ -10,6 +10,7 @@ import java.util.List;
 @Getter @NoArgsConstructor @AllArgsConstructor @Builder
 public class MapResponse {
     private Integer id;
+    private Integer fee;
     private Integer time;
     private List<Subway> subway;
 }

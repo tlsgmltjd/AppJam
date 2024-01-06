@@ -7,13 +7,15 @@ import com.example.appjam.service.FeignService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequiredArgsConstructor
 public class MapController {
     private final FeignService feignService;
 
     @PostMapping(value = "/map")
-    public TransitResponseDTO getGitHubContributors(@RequestBody MapRequest request){
+    public List<MapResponse> getGitHubContributors(@RequestBody MapRequest request){
         return feignService.getContributor(request);
     }
 }

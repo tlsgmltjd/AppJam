@@ -10,6 +10,6 @@ public class Subway {
     private String subwayName;
     private String startGate;
     private String endGate;
-    private String lon;
-    private String lat;
+    private Double lon;
+    private Double lat;
 }
