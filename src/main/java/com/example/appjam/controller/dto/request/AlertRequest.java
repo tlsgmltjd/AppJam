@@ -6,6 +6,6 @@ import lombok.NoArgsConstructor;
 @Getter @NoArgsConstructor
 public class AlertRequest {
     private String position;
-    private String lon;
-    private String lat;
+//    private String lon;
+//    private String lat;
 }

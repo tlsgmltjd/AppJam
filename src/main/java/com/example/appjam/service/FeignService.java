@@ -73,8 +73,6 @@ public class FeignService {
                 )
                 .toList();
 
-        SubwayCongestionResponseDTO subwayCongestdionResponseDTO = subwayCongestionFeignClient.getSubwayCongestion("104", "gqoJbGgG1W3VOf4B19kUI1wWdpKFiQ7oa5Rf486r");
-
         List<String> cods = new ArrayList<>();
 
         com.example.appjam.domain.Subway d = subwayRepository.findBySubwayLineAndStationName(mapResponses.get(0).getSubway().get(0).getSubwayName().charAt(3) + "호선", mapResponses.get(0).getSubway().get(0).getStartGate() + "역")
@@ -88,7 +86,7 @@ public class FeignService {
 
          List<SubwayCongestionResponseDTO> subwayCongestionResponseDTOS = cods.stream()
                         .filter(code -> !code.equals("0"))
-                         .map(code -> subwayCongestionFeignClient.getSubwayCongestion(code, "gqoJbGgG1W3VOf4B19kUI1wWdpKFiQ7oa5Rf486r"))
+                         .map(code -> subwayCongestionFeignClient.getSubwayCongestion(code, "N2QzY827oC1RFR7xspN166M3miWS6RY5aWQMUZzE"))
                  .toList();
 
         List<List<Integer>> congestion = new ArrayList<>();
