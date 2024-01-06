@@ -38,7 +38,6 @@ dependencies {
     implementation group: 'io.github.openfeign', name: 'feign-gson', version: '11.0'
     implementation group: 'com.squareup.okhttp3', name: 'okhttp', version: "4.2.2"
     implementation 'com.google.firebase:firebase-admin:6.8.1'
-    implementation 'com.example:fcm-library:1.0.0'
 }
 
 
