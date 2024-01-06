@@ -1,13 +1,11 @@
 package com.example.appjam.controller;
 
 import com.example.appjam.controller.dto.LoginRequest;
+import com.example.appjam.controller.dto.UserInfoResponse;
 import com.example.appjam.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/auth")
@@ -22,5 +20,8 @@ public class UserController {
         return ResponseEntity.noContent().build();
     }
 
-
+    @GetMapping("/profile")
+    public ResponseEntity<UserInfoResponse> userInfo(@RequestParam String token) {
+        return ResponseEntity.ok(userService.userInfo(token));
+    }
 }
