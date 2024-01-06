@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @org.springframework.cloud.openfeign.FeignClient(name = "feign2", url = "https://apis.openapi.sk.com/puzzle/subway/congestion/stat/car/stations")
 public interface SubwayCongestionFeignClient {
 
-    @RequestMapping(method = RequestMethod.GET, value = "/{stationCode}?hh=08")
+    @RequestMapping(method = RequestMethod.GET, value = "/{stationCode}")
     SubwayCongestionResponseDTO getSubwayCongestion(
             @PathVariable("stationCode") String stationCode,
             @RequestParam("appKey") String appKey

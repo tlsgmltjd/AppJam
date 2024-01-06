@@ -75,9 +75,6 @@ public class FeignService {
 
         List<String> cods = new ArrayList<>();
 
-        com.example.appjam.domain.Subway d = subwayRepository.findBySubwayLineAndStationName(mapResponses.get(0).getSubway().get(0).getSubwayName().charAt(3) + "호선", mapResponses.get(0).getSubway().get(0).getStartGate() + "역")
-                .orElseThrow(RuntimeException::new);
-
          mapResponses.stream()
                 .map(mapResponse -> mapResponse.getSubway()
                         .stream()
