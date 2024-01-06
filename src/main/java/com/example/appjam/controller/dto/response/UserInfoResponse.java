@@ -1,4 +1,4 @@
-package com.example.appjam.controller.dto;
+package com.example.appjam.controller.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

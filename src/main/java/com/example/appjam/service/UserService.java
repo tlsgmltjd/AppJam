@@ -1,7 +1,7 @@
 package com.example.appjam.service;
 
-import com.example.appjam.controller.dto.LoginRequest;
-import com.example.appjam.controller.dto.UserInfoResponse;
+import com.example.appjam.controller.dto.request.LoginRequest;
+import com.example.appjam.controller.dto.response.UserInfoResponse;
 import com.example.appjam.domain.UserEntity;
 import com.example.appjam.repository.UserJpaRepository;
 import lombok.RequiredArgsConstructor;
@@ -21,6 +21,7 @@ public class UserService {
                     .userName(request.getUserName())
                     .token(request.getToken())
                     .build();
+
             userJpaRepository.save(user);
         }
     }
