@@ -33,7 +33,7 @@ public class FeignService {
     private final SubwayRepository subwayRepository;
 
     public List<MapResponse> getContributor(MapRequest request) {
-        TransitResponseDTO contributor = feignClient.getContributor("e8wHh2tya84M88aReEpXCa5XTQf3xgo01aZG39k5", FeignRequest.builder()
+        TransitResponseDTO contributor = feignClient.getContributor("", FeignRequest.builder()
                         .startX(request.getStartX())
                         .startY(request.getStartY())
                         .endX(request.getEndX())
@@ -83,7 +83,7 @@ public class FeignService {
 
          List<SubwayCongestionResponseDTO> subwayCongestionResponseDTOS = cods.stream()
                         .filter(code -> !code.equals("0"))
-                         .map(code -> subwayCongestionFeignClient.getSubwayCongestion(code, "N2QzY827oC1RFR7xspN166M3miWS6RY5aWQMUZzE"))
+                         .map(code -> subwayCongestionFeignClient.getSubwayCongestion(code, ""))
                  .toList();
 
         List<List<Integer>> congestion = new ArrayList<>();
